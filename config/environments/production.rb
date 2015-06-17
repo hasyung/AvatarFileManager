@@ -79,6 +79,7 @@ Rails.application.configure do
 
   # Mail settings
   config.action_mailer.delivery_method = :smtp
+
   config.action_mailer.smtp_settings = {
     address: "smtp.exmail.qq.com",
     port: 25,
@@ -91,7 +92,9 @@ Rails.application.configure do
 
   # Host
   # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'code.cdavatar.com:8083' }
 
   # From address
   # ActionMailer::Base.default :from => 'Boxroom <yourname@yourdomain.com>'
+  ActionMailer::Base.default :from => 'support@cdavatar.com'
 end
