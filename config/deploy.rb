@@ -24,7 +24,7 @@ set :rvm_custom_path, '~/.rvm'   # only needed if not detected
 set :keep_releases, 3
 
 # files we want symlinking to specific entries in shared
-set :linked_files, %w{}
+set :linked_files, %w{db/production.sqlite3}
 
 # dirs we want symlinking to shared
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/export public/uploads}
