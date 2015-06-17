@@ -2,16 +2,6 @@ APP_ROOT = '/var/www/file_manager/current/'
 
 ENV["BUNDLE_GEMFILE"] = File.join(APP_ROOT, "Gemfile")
 
-on_worker_boot do
-  Redis.current.client.reconnect
-  $redis = Redis.current
-end
-
-on_restart do
-  Redis.current.client.reconnect
-  $redis = Redis.current
-end
-
 environment "production"
 threads 2, 8
 workers 2
