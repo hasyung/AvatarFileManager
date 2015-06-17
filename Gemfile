@@ -18,6 +18,7 @@ gem 'jquery-fileupload-rails'
 gem 'puma'
 
 group :development do
+  gem 'quiet_assets'
   gem 'web-console', '~> 2.0'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'

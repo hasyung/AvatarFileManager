@@ -5,8 +5,10 @@
   <% if current_user.member_of_admins? -%>
     <%= link_to t(:users), users_path %> &nbsp; &nbsp;
     <%= link_to t(:groups), groups_path %> &nbsp; &nbsp;
-    <%= link_to t(:shared_files), share_links_path %>
+    <%= link_to t(:shared_files), share_links_path %>&nbsp; &nbsp;
   <% end -%>
+    <a href="http://code.cdavatar.com:8080/">Code Repo</a> &nbsp; &nbsp;
+    <a href="http://code.cdavatar.com:8081/">Prd Preview</a> &nbsp; &nbsp;
   <% end -%>
     &nbsp;
   </p>

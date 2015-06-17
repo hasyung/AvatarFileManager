@@ -78,14 +78,16 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Mail settings
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   :address => 'mailhost',
-  #   :port => 587,
-  #   :user_name => 'user_name',
-  #   :password => 'password',
-  #   :authentication => 'plain'
-  # }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.exmail.qq.com",
+    port: 25,
+    user_name: "support@cdavatar.com",
+    password: "asdfg119",
+    domain: "cdavatar.com",
+    authentication: "plain",
+    enable_starttls_auto: true
+  }
 
   # Host
   # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
