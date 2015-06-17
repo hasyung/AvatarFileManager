@@ -19,7 +19,7 @@ server '114.215.142.122',
     # password: 'please use keys'
   }
 
-set :deploy_to, "/var/www/hrms"
+set :deploy_to, "/var/www/file_manager"
 set :rails_env, :production
 set :enable_ssl, false
 
