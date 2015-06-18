@@ -1,5 +1,5 @@
 class Folder < ActiveRecord::Base
-  acts_as_tree :order => 'name'
+  acts_as_tree :order => 'id'
 
   has_many :user_files, -> { order :attachment_file_name }, :dependent => :destroy
   has_many :permissions, :dependent => :destroy
