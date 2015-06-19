@@ -65,10 +65,7 @@
         <%if file.is_image?%>
           <div style="width:120px;text-align:center;font-size:0.8em;color:#444;">
             <img src="<%=file_path(file)%>" alt="" style="border:1px solid #aaa;border-radius:2px; max-width:100px; max-height:100px;">
-            <div>
-              <a target="_blank" href="/<%=file.attachment.path.gsub(Rails.root.to_s, "").sub("/public/", "") + file.attachment_file_name%>">Original</a>
-              <a href="<%=file_path(file)%>">Download</a>
-            </div>
+            <a href="<%=file_path(file)%>">Download</a>
           </div>
         <%else%>
           <%= link_to file.attachment_file_name, file_path(file), :title => "#{t(:download)} #{file.attachment_file_name}" %>
