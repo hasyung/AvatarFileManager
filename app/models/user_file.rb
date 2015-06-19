@@ -30,4 +30,8 @@ class UserFile < ActiveRecord::Base
   def extension
     File.extname(attachment_file_name)[1..-1]
   end
+
+  def is_image?
+    %w(jpg jpeg png bmp gif svg).include?(extension.downcase)
+  end
 end

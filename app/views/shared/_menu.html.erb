@@ -1,16 +1,16 @@
 <div id="menu">
   <p class="menu">
-  <% if signed_in? -%>
-    <%= link_to t(:folders), folders_path %> &nbsp; &nbsp;
-  <% if current_user.member_of_admins? -%>
-    <%= link_to t(:users), users_path %> &nbsp; &nbsp;
-    <%= link_to t(:groups), groups_path %> &nbsp; &nbsp;
-    <%= link_to t(:shared_files), share_links_path %>&nbsp; &nbsp;
-  <% end -%>
-    <a href="http://code.cdavatar.com:8080/">Code Repo</a> &nbsp; &nbsp;
-    <a href="http://code.cdavatar.com:8081/">Product Design</a> &nbsp; &nbsp;
-    <a href="http://code.cdavatar.com:8082/">UI Design</a> &nbsp; &nbsp;
-  <% end -%>
-    &nbsp;
+    <a href="http://code.cdavatar.com:8080/">Code Repos <sup style="color:red;font-weight:bold;">Git</sup></a> &nbsp; &nbsp;
+    <a href="http://code.cdavatar.com:8081/">Scal Hrms <sup style="color:red;font-weight:bold;">Prd</sup></a> &nbsp; &nbsp;
+    <a href="http://exmail.qq.com">EMail Inbox</a> &nbsp; &nbsp;
+
+    <% if signed_in? -%>
+      <%= link_to t(:folders), folders_path %> &nbsp; &nbsp;
+    <% if current_user.member_of_admins? -%>
+      <%= link_to t(:users), users_path %> &nbsp; &nbsp;
+      <%= link_to t(:groups), groups_path %> &nbsp; &nbsp;
+      <%= link_to t(:shared_files), share_links_path %>&nbsp; &nbsp;
+    <% end -%>
+    <% end -%>
   </p>
 </div>
