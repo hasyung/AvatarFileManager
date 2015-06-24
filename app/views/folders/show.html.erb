@@ -69,6 +69,7 @@
             <%else%>
               <%= link_to file.attachment_file_name, file_path(file), :title => "#{t(:download)} #{file.attachment_file_name}" %>
             <%end%>
+            <br>
             <a target="_blank" href="<%=file_preview_path(file)%>">Preview</a>
             <a href="<%=file_path(file)%>">Download</a>
           </div>
