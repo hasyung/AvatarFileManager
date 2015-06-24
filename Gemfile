@@ -16,6 +16,9 @@ gem 'acts_as_tree'
 gem 'paperclip'
 gem 'jquery-fileupload-rails'
 gem 'puma'
+gem 'redcarpet'
+gem 'rdoc'
+gem 'asciidoc'
 gem 'github-markup'
 
 group :development do
