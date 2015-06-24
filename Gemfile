@@ -16,6 +16,7 @@ gem 'acts_as_tree'
 gem 'paperclip'
 gem 'jquery-fileupload-rails'
 gem 'puma'
+gem 'github-markup'
 
 group :development do
   gem 'quiet_assets'

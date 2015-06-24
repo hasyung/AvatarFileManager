@@ -1,4 +1,6 @@
 class FilesController < ApplicationController
+  require 'github/markup'
+
   before_action :require_existing_file, :only => [:show, :edit, :update, :destroy, :preview]
   before_action :require_existing_target_folder, :only => [:new, :create]
 
@@ -14,7 +16,12 @@ class FilesController < ApplicationController
 
   def preview
     @filename = Digest::MD5.hexdigest(Time.new.to_s) + "_" + @file.attachment_file_name
-    FileUtils.cp(@file.attachment.path, Rails.root.to_s + "/public/uploads/" + @filename)
+
+    if @file.is_markdown? || @file.is_asciidoc?
+      @filename = @filename + ".html"
+      GitHub::Markup.render(@file.attachment.path, Rails.root.to_s + "/uploads/" + @filename)
+    end
+
     redirect_to "/uploads/#{@filename}"
   end
 

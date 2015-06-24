@@ -35,7 +35,19 @@ class UserFile < ActiveRecord::Base
     %w(jpg jpeg png bmp gif svg).include?(extension.downcase)
   end
 
-  def is_document?
+  def is_pdf?
     %w(pdf).include?(extension.downcase)
+  end
+
+  def is_markdown?
+    %w(md markdown).include?(extension.downcase)
+  end
+
+  def is_asciidoc?
+    %w(adoc).include?(extension.downcase)
+  end
+
+  def is_document?
+    is_pdf? || is_markdown? || is_asciidoc?
   end
 end

@@ -64,7 +64,11 @@
       <td class="file_name">
         <%if file.is_image? || file.is_document?%>
           <div style="width:120px;text-align:center;font-size:0.8em;color:#444;">
-            <img src="<%=file_path(file)%>" alt="" style="border:1px solid #aaa;border-radius:2px; max-width:100px; max-height:100px;">
+            <%if file.is_image?%>
+              <img src="<%=file_path(file)%>" alt="" style="border:1px solid #aaa;border-radius:2px; max-width:100px; max-height:100px;">
+            <%else%>
+              <%= link_to file.attachment_file_name, file_path(file), :title => "#{t(:download)} #{file.attachment_file_name}" %>
+            <%end%>
             <a target="_blank" href="<%=file_preview_path(file)%>">Preview</a>
             <a href="<%=file_path(file)%>">Download</a>
           </div>
