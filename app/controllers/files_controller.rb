@@ -25,6 +25,8 @@ class FilesController < ApplicationController
         str = GitHub::Markup.render(@file.attachment.path + "." + File.extname(@file.attachment_file_name)[1..-1], File.read(@file.attachment.path))
         file.write(str)
       end
+    else
+      FileUtils.cp(@file.attachment.path, Rails.root.to_s + "/public/uploads/" + @filename)
     end
 
     redirect_to "/uploads/#{@filename}"
