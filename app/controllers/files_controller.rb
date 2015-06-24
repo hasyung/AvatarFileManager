@@ -13,8 +13,9 @@ class FilesController < ApplicationController
   end
 
   def preview
-    FileUtils.cp(@file.attachment.path, Rails.root.to_s + "/public/uploads/" + @file.attachment_file_name)
-    redirect_to "/uploads/#{@file.attachment_file_name}"
+    @filename = Digest::MD5.hexdigest(Time.new.to_s) + "_" + @file.attachment_file_name
+    FileUtils.cp(@file.attachment.path, Rails.root.to_s + "/public/uploads/" + @filename)
+    redirect_to "/uploads/#{@filename}"
   end
 
   # @target_folder is set in require_existing_target_folder

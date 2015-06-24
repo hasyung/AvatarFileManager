@@ -35,7 +35,7 @@ Boxroom::Application.routes.draw do
     resources :files, :only => [:new, :create]
   end
 
-  resources :files, :shallow => :true, :only => :show do
+  resources :files, :shallow => true, :only => :show do
     resources :share_links, :only => [:new, :create]
   end
 
