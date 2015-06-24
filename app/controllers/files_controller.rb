@@ -15,21 +15,23 @@ class FilesController < ApplicationController
   end
 
   def preview
+    Pathname.new(Rails.root.to_s + "/public/common/").children.each { |p| p.unlink }
+
     @filename = Digest::MD5.hexdigest(Time.new.to_s) + "_" + @file.attachment_file_name
 
     if @file.is_markdown? || @file.is_asciidoc? || @file.is_rdoc?
       @filename = @filename + ".html"
 
-      File.open(Rails.root.to_s + "/public/uploads/" + @filename, "w") do |file|
+      File.open(Rails.root.to_s + "/public/common/" + @filename, "w") do |file|
         puts @file.attachment.path + "." + File.extname(@file.attachment_file_name)[1..-1]
         str = GitHub::Markup.render(@file.attachment.path + "." + File.extname(@file.attachment_file_name)[1..-1], File.read(@file.attachment.path))
         file.write(str)
       end
     else
-      FileUtils.cp(@file.attachment.path, Rails.root.to_s + "/public/uploads/" + @filename)
+      FileUtils.cp(@file.attachment.path, Rails.root.to_s + "/public/common/" + @filename)
     end
 
-    redirect_to "/uploads/#{@filename}"
+    redirect_to "/common/#{@filename}"
   end
 
   # @target_folder is set in require_existing_target_folder
