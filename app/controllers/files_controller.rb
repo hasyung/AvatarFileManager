@@ -19,7 +19,12 @@ class FilesController < ApplicationController
 
     if @file.is_markdown? || @file.is_asciidoc? || @file.is_rdoc?
       @filename = @filename + ".html"
-      GitHub::Markup.render(Rails.root.to_s + "/uploads/" + @filename, File.read(@file.attachment.path))
+
+      File.open(Rails.root.to_s + "/public/uploads/" + @filename, "w") do |file|
+        puts @file.attachment.path + "." + File.extname(@file.attachment_file_name)[1..-1]
+        str = GitHub::Markup.render(@file.attachment.path + "." + File.extname(@file.attachment_file_name)[1..-1], File.read(@file.attachment.path))
+        file.write(str)
+      end
     end
 
     redirect_to "/uploads/#{@filename}"
