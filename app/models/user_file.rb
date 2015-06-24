@@ -40,11 +40,15 @@ class UserFile < ActiveRecord::Base
   end
 
   def is_markdown?
-    %w(md markdown).include?(extension.downcase)
+    %w(md markdown mdown mkdn).include?(extension.downcase)
   end
 
   def is_asciidoc?
-    %w(adoc).include?(extension.downcase)
+    %w(adoc asc asciidoc).include?(extension.downcase)
+  end
+
+  def is_rdoc?
+    %w(rdoc).include?(extension.downcase)
   end
 
   def is_document?

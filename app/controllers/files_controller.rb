@@ -17,7 +17,7 @@ class FilesController < ApplicationController
   def preview
     @filename = Digest::MD5.hexdigest(Time.new.to_s) + "_" + @file.attachment_file_name
 
-    if @file.is_markdown? || @file.is_asciidoc?
+    if @file.is_markdown? || @file.is_asciidoc? || @file.is_rdoc?
       @filename = @filename + ".html"
       GitHub::Markup.render(@file.attachment.path, Rails.root.to_s + "/uploads/" + @filename)
     end
