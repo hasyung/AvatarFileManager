@@ -62,7 +62,7 @@
     <tr class="<%= cycle('even','odd') %>">
       <td><%= image_tag(file_icon(file.extension)) %></td>
       <td class="file_name">
-        <%if file.is_image? && file.is_document?%>
+        <%if file.is_image? || file.is_document?%>
           <div style="width:120px;text-align:center;font-size:0.8em;color:#444;">
             <img src="<%=file_path(file)%>" alt="" style="border:1px solid #aaa;border-radius:2px; max-width:100px; max-height:100px;">
             <a target="_blank" href="<%=file_preview_path(file)%>">Preview</a>
