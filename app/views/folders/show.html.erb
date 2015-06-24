@@ -65,7 +65,7 @@
         <%if file.is_image?%>
           <div style="width:120px;text-align:center;font-size:0.8em;color:#444;">
             <img src="<%=file_path(file)%>" alt="" style="border:1px solid #aaa;border-radius:2px; max-width:100px; max-height:100px;">
-            <a target="_blank"> href="<%=file_preview_path(file)%>">Preview</a>
+            <a target="_blank" href="<%=file_preview_path(file)%>">Preview</a>
             <a href="<%=file_path(file)%>">Download</a>
           </div>
         <%else%>
