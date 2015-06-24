@@ -34,4 +34,8 @@ class UserFile < ActiveRecord::Base
   def is_image?
     %w(jpg jpeg png bmp gif svg).include?(extension.downcase)
   end
+
+  def is_document?
+    %w(pdf).include?(extension.downcase)
+  end
 end
