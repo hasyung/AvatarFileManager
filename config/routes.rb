@@ -9,7 +9,9 @@ Boxroom::Application.routes.draw do
   resources :reset_password, :except => [:index, :show, :destroy]
   resources :signup, :only => [:edit, :update]
   resources :groups, :except => :show
-  resources :files, :except => [:index, :new, :create]
+  resources :files, :except => [:index, :new, :create] do
+    get :preview
+  end
   resources :share_links, :only => [:index, :show, :destroy]
 
   resources :users, :except => :show do

@@ -1,5 +1,5 @@
 class FilesController < ApplicationController
-  before_action :require_existing_file, :only => [:show, :edit, :update, :destroy]
+  before_action :require_existing_file, :only => [:show, :edit, :update, :destroy, :preview]
   before_action :require_existing_target_folder, :only => [:new, :create]
 
   before_action :require_create_permission, :only => [:new, :create]
@@ -10,6 +10,11 @@ class FilesController < ApplicationController
   # @file and @folder are set in require_existing_file
   def show
     send_file @file.attachment.path, :filename => @file.attachment_file_name
+  end
+
+  def preview
+    FileUtils.cp(@file.attachment.path, Rails.root.to_s + "/public/uploads/" + @file.attachment_file_name)
+    redirect_to "/uploads/#{@file.attachment_file_name}"
   end
 
   # @target_folder is set in require_existing_target_folder
@@ -51,7 +56,7 @@ class FilesController < ApplicationController
   private
 
   def require_existing_file
-    @file = UserFile.find(params[:id])
+    @file = UserFile.find(params[:id] || params[:file_id])
     @folder = @file.folder
   rescue ActiveRecord::RecordNotFound
     redirect_to Folder.root, :alert => t(:already_deleted, :type => t(:this_file))
