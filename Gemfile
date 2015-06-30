@@ -20,6 +20,7 @@ gem 'redcarpet'
 gem 'rdoc'
 gem 'asciidoc'
 gem 'github-markup'
+gem 'iniparse'
 
 group :development do
   gem 'quiet_assets'

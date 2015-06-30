@@ -27,6 +27,10 @@ class FilesController < ApplicationController
         str = GitHub::Markup.render(@file.attachment.path + "." + File.extname(@file.attachment_file_name)[1..-1], File.read(@file.attachment.path))
         file.write(str)
       end
+    elsif @file.is_url?
+      data = IniParse.parse(File.read(@file.attachment.path))
+      hash = data.to_h
+      redirect_to hash["InternetShortcut"]["URL"] and return
     else
       FileUtils.cp(@file.attachment.path, Rails.root.to_s + "/public/common/" + @filename)
     end
