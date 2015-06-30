@@ -54,4 +54,8 @@ class UserFile < ActiveRecord::Base
   def is_document?
     is_pdf? || is_markdown? || is_asciidoc?
   end
+
+  def is_url?
+    %w(url).include?(extension.downcase)
+  end
 end
