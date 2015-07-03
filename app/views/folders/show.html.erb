@@ -74,7 +74,7 @@
             <a target="_blank" href="<%=file_preview_path(file)%>">Preview</a>
             <a href="<%=file_path(file)%>">Download</a>
           </div>
-        <%elsif file.is_url?%>
+        <%elsif (file.is_url? || file.is_text?)%>
           <a target="_blank" href="<%=file_preview_path(file)%>"><%=file.attachment_file_name%></a>
         <%else%>
           <%= link_to file.attachment_file_name, file_path(file), :title => "#{t(:download)} #{file.attachment_file_name}" %>

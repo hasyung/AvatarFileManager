@@ -58,4 +58,8 @@ class UserFile < ActiveRecord::Base
   def is_url?
     %w(url).include?(extension.downcase)
   end
+
+  def is_text?
+    %w(txt).include?(extension.downcase)
+  end
 end
