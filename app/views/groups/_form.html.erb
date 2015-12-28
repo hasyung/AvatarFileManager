@@ -1,11 +1,15 @@
 <%= form_for @group do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :name %>:<br>
-    <%= f.text_field :name, { :class => 'text_input' } %>
-  </p>
-  <p>
-    <%= f.submit t(:save) %> &nbsp; &mdash; &nbsp;
-    <%= link_to t(:back), groups_url %>
-  </p>
+  <div class="form__row">
+    <div class="form__label">
+      <%= f.label :name %>
+    </div>
+    <div class="form__control">
+      <%= f.text_field :name, { :class => 'text_input' } %>
+    </div>
+  </div>
+  <div class="form-btns clearfix">
+    <button type="submit" class="button--light">保 存</button>
+    <%= link_to '返 回', groups_url, { :class => 'button--light default link-to-button' } %>
+  </div>
 <% end %>

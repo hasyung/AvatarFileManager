@@ -1,27 +1,39 @@
 <%= form_for @user do |f| %>
   <%= f.error_messages %>
   <% unless @user.new_record? -%>
-  <p>
-    <%= f.label :name %>:<br>
-    <%= f.text_field :name, { :class => 'text_input' } %>
-  </p>
+  <div class="form__row">
+    <div class="form__label">
+      <%= f.label :name %>
+    </div>
+    <div class="form__control">
+      <%= f.text_field :name, { :class => 'text_input' } %>
+    </div>
+  </div>
   <% end -%>
-  <p>
-    <%= f.label :email %>:<br>
-    <%= f.text_field :email, { :class => 'text_input' } %>
-  </p>
+  <div class="form__row">
+    <div class="form__label">
+      <%= f.label :email %>
+    </div>
+    <div class="form__control">
+      <%= f.text_field :email, { :class => 'text_input' } %>
+    </div>
+  </div>
   <% unless @user.new_record? -%>
-  <p>
-    <%= f.label :password %>:<br>
-    <%= f.password_field :password, { :class => 'text_input' } %>
-  </p>
+  <div class="form__row">
+    <div class="form__label">
+      <%= f.label :password %>
+    </div>
+    <div class="form__control">
+      <%= f.password_field :password, { :class => 'text_input' } %>
+    </div>
+  </div>
   <p>
     <%= label_tag t(:confirm_password) %>:<br>
     <%= f.password_field :password_confirmation, { :class => 'text_input' } %>
   </p>
   <% end -%>
   <% if signed_in? && current_user.member_of_admins? -%>
-  <p>
+  <p class="title--level1">
     <%= t :member_of_these_groups %>:
     <span class="user_groups">
     <% if @user.is_admin -%>
@@ -36,11 +48,10 @@
     </span>
   </p>
   <% end -%>
-  <p>
-    <%= f.submit t(:save) %>
+  <div class="form-btns clearfix">
+    <button type="submit" class="button--light">保 存</button>
   <% if @user != current_user -%>
-    &nbsp; &mdash; &nbsp;
-    <%= link_to t(:back), users_url %>
+    <%= link_to '返 回', users_url, { :class => 'button--light default link-to-button' } %>
   <% end -%>
-  </p>
+  </div>
 <% end %>

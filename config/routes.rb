@@ -1,6 +1,7 @@
 Boxroom::Application.routes.draw do
   get '/file_exists', :to => 'files#exists'
   get '/signin', :to => 'sessions#new', :as => 'signin'
+  get '/home', :to => 'home#index', :as => 'home', path: '/home'
   delete '/signout', :to => 'sessions#destroy'
 
   # Resources
