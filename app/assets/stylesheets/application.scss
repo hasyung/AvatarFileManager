@@ -57,14 +57,14 @@ td img { padding: 0; }
         content: '';
         display: block;
         position: absolute;
-        background: rgba(255,255,255,0.6);
+        background: rgba(255,255,255,0.9);
         width: 60px;
         height: 100%;
         left: 0;
         top: 0;
         opacity: .5;
-        -webkit-filter: blur(30px);
-        filter: blur(30px);
+        -webkit-filter: blur(20px);
+        filter: blur(20px);
         -webkit-transform: translateX(-100px)  skewX(-15deg);
         transform: translateX(-100px)  skewX(-15deg);
     }
@@ -208,7 +208,7 @@ td img { padding: 0; }
     height: 60px;
 }
 
-#content { position: relative; width: 90%; margin: 10px auto 0 auto; padding: 15px 25px 15px 25px; background-color: #FFF; border-right: 1px solid #CCC; border-bottom: 1px solid #AAA; }
+#content { position: relative; width: 90%; margin: 10px auto 0 auto; padding: 15px 25px 15px 25px; background-color: #FFF; border-right: 1px solid #CCC; border-bottom: 1px solid #AAA;}
 #footer { position: absolute; bottom: 0; width: 100%; background-color: rgb(0,24,49); color: #FFF; border-top: 4px solid #BA303A; }
 #footer_spacer { height: 70px; }
 
@@ -411,33 +411,33 @@ span.field_with_errors input, span.field_with_errors textarea { background-color
 @-moz-keyframes slideLignt {
     0% {
         transform: skew(-20deg, 0) translateX(0) translateZ(0);
-        opacity: .2;
+        opacity: .4;
     }
     100% {
         transform: skew(-20deg, 0) translateX(338px) translateZ(0);
-        opacity: .2;
+        opacity: .4;
     }
 }
 
 @-webkit-keyframes slideLignt {
     0% {
         transform: skew(-20deg, 0) translateX(0) translateZ(0);
-        opacity: .2;
+        opacity: .4;
     }
     100% {
         transform: skew(-20deg, 0) translateX(338px) translateZ(0);
-        opacity: .2;
+        opacity: .4;
     }
 }
 
 @keyframes slideLignt {
     0% {
         transform: skew(-20deg, 0) translateX(0) translateZ(0);
-        opacity: .2;
+        opacity: .4;
     }
     100% {
         transform: skew(-20deg, 0) translateX(338px) translateZ(0);
-        opacity: .2;
+        opacity: .4;
     }
 }
 
