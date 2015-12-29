@@ -188,13 +188,13 @@
         format: "%{attribute} %{message}"
 
     models:
-      clipboard: Clipboard
-      folder: Folder
-      group: Group
+      clipboard: 剪切板
+      folder: 文件夹
+      group: 工作组
       permission: Permission
-      share_link: Share link
-      user: User
-      user_file: File
+      share_link: 分享链接
+      user: 用户
+      user_file: 文件
 
     attributes:
       folder:
@@ -202,8 +202,8 @@
       group:
         name: Name
       share_link:
-        emails: Email addresses
-        expires_at: Expires
+        emails: 电子邮箱
+        expires_at: 到期时间
       user:
         email: Email
         name: Name
@@ -215,10 +215,10 @@
   # APPLICATION SPECIFIC
 
   # general
-  back: Back
-  save: Save
-  name: Name
-  email: Email
+  back: 返 回
+  save: 保 存
+  name: 姓名
+  email: 电子邮箱
   submit: Submit
 
   your_changes_were_saved: Your changes were saved successfully.
@@ -278,8 +278,8 @@
   rename_group: Rename group
 
   #groups/index
-  groups: Groups
-  create_a_new_group: Create a new group
+  groups: 工作组管理
+  create_a_new_group: 新建工作组
 
   #groups/new
   new_group: New group
@@ -310,32 +310,32 @@
   sign_in: Sign in
 
   #share_links/index
-  shared_by: Shared by
+  shared_by: 分享者
   unshare: Unshare
 
   #share_links/new
   this_share_link: this share link
   share_file: Share file
   you_are_about_to_share_the_following_file: You are about to share the following file
-  emails_to_share_with: Email addresses of the people you wish to share this file with
-  comma_seperated: Comma seperated
-  number_of_charachters: Number of characters
-  link_expires: Expires
-  tomorrow: Tomorrow
-  three_days_from_now: Three days from now
-  one_week_from_now: A week from now
-  ten_days_from_now: Ten days from now
-  two_weeks_from_now: Two weeks from now
-  three_weeks_from_now: Three weeks from now
-  one_month_from_now: A month from now
-  two_months_from_now: Two months from now
-  three_months_from_now: Three months from now
-  half_year_from_now: A half year from now
+  emails_to_share_with: 请填写您要分享文件的电子邮箱地址
+  comma_seperated: 逗号隔开
+  number_of_charachters: 字数
+  link_expires: 过期时间
+  tomorrow: 明天
+  three_days_from_now: 三天后
+  one_week_from_now: 一周后
+  ten_days_from_now: 十天后
+  two_weeks_from_now: 两周后
+  three_weeks_from_now: 三周后
+  one_month_from_now: 一个月后
+  two_months_from_now: 两个月后
+  three_months_from_now: 三个月后
+  half_year_from_now: 半年后
   share_link_could_not_be_sent: The download link could not be sent
   are_invalid_due_to: "is invalid due to %{email}"
   shared_successfully: The file was shared successfully.
-  shared_message: Message
-  optional: Optional
+  shared_message: 您想说
+  optional: 可选
 
   #shared/_header
   hello: Hello
@@ -344,22 +344,22 @@
 
   #shared/_menu
   folders: Folders
-  users: Users
-  shared_files: Shared files
+  users: 用户管理
+  shared_files: 文件分享管理
 
   #users/_form
   member_of_these_groups: Member of these groups
   confirm_password: Confirm password
 
   #users/index
-  create_a_new_user: Create a new user
-  active_users: Active users
-  invited_users: Invited users
+  create_a_new_user: 创建新用户
+  active_users: 已有用户
+  invited_users: 被邀请用户
   expiration_date: Expiration date
   extend_expiration_date: Extend expiration date
 
   #users/new
-  new_user: New user
+  new_user: 创建新用户
 
   #admins/controller
   admin_user_created_sucessfully: The admin user was created successfully. You can now sign in.

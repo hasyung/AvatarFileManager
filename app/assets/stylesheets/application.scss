@@ -36,6 +36,55 @@ td img { padding: 0; }
 }
 /* 阴影 end */
 
+/* 面包屑菜单 */
+.breadcrumb {
+    background-color: #F6F6F6;
+    display: block;
+    font-size: 11pt;
+    float: left;
+    margin-left: 0;
+    position: relative;
+    padding: 5px 15px;
+
+    a {
+        color: #4f79bf;
+    }
+
+    &::after {
+        top: 0;
+        left: 100%;
+        position: absolute;
+        content: '';
+        display: block;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 12px solid #F6F6F6;
+        width: 0;
+        height: 0;
+        z-index: 1;
+    }
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child::after {
+        visibility: hidden;
+    }
+
+    &:nth-child(odd) {
+        background-color: #ddd;
+
+        &::after {
+            border-left-color: #ddd;
+        }
+    }
+}
+
+
+
+/* 面包屑菜单 end */
+
 
 
 /* 按钮样式 */
@@ -382,7 +431,6 @@ td img { padding: 0; }
 .file_name a, .shared_file a { color: #000; text-decoration: underline; }
 .file_size { min-width: 100px; }
 .disabled { color: #999; }
-.breadcrumb { margin-bottom: 5px; padding: 4px; font-size: 11pt; background-color: #F6F6F6; border: 1px solid #DDD; border-bottom-color: #AAA; border-right-color: #CCC; display: inline-block; }
 .nowrap { white-space: nowrap; }
 .permission_column { width: 75px; text-align: center; }
 .permissions_button, .back { display: inline-block; margin-top: 15px; }
@@ -431,12 +479,13 @@ span.field_with_errors input, span.field_with_errors textarea { background-color
 }
 
 .highlight {
+    border-right: 1px solid #ddd;
     font-size: 16px;
     padding: 0 14px;
     text-shadow: 3px -3px 2px #000;
 }
 
-.highlight span { display: inline-block; }
+// .highlight span { display: inline-block; }
 .highlight a { text-decoration: none; color: #000; outline: none; }
 
 /* slightly enhanced, universal clearfix hack */

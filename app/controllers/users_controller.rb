@@ -53,10 +53,10 @@ class UsersController < ApplicationController
 
   def require_existing_user
     if current_user.member_of_admins? && params[:id] != current_user.id.to_s
-      @title = t(:edit_user)
+      @title = '编辑用户'
       @user = User.find(params[:id])
     else
-      @title = t(:account_settings)
+      @title = '账号设置'
       @user = current_user
     end
   rescue ActiveRecord::RecordNotFound
