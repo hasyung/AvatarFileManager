@@ -1,21 +1,32 @@
-<% content_for :title, t(:sign_in) -%>
+<div class="form__wrapper--center form__wrapper--normal">
+  <% content_for :title, '登录' -%>
 
-<h1><%= content_for :title %></h1>
-<%= form_tag(sessions_path) do %>
-  <p>
-    <%= label_tag :username, t(:username) %>:<br>
-    <%= text_field_tag :username, nil, :class => 'text_input' %>
-  </p>
-  <p>
-    <%= label_tag :password, t(:password) %>:<br>
-    <%= password_field_tag :password, nil, :class => 'text_input' %>
-  </p>
-  <p>
-    <%= check_box_tag :remember_me, 'true' %>
-    <%= label_tag :remember_me, t(:remember_me) %>
-  </p>
-  <p>
-    <%= submit_tag t(:sign_in) %> &nbsp; &mdash; &nbsp;
-    <%= link_to t(:reset_password), new_reset_password_path %>
-  </p>
-<% end %>
+  <h1 class="title--level1"><%= content_for :title %></h1>
+  <%= form_tag(sessions_path) do %>
+    <div class="form__row">
+      <div class="form__label">
+        <%= label_tag :username, t(:'用户名') %>
+      </div>
+      <div class="form__control">
+        <%= text_field_tag :username, nil, :class => 'text_input' %>
+      </div>
+    </div>
+    <div class="form__row">
+      <div class="form__label">
+        <%= label_tag :password, t(:'密码') %>
+      </div>
+      <div class="form__control">
+        <%= password_field_tag :password, nil, :class => 'text_input' %>
+      </div>
+    </div>
+    <p>
+      <%= check_box_tag :remember_me, 'true' %>
+      <%= label_tag :remember_me, t(:'记住密码'), { :class => 'remember_me' } %>
+    </p>
+
+    <div class="form-btns clearfix">
+      <button type="submit" class="button--light">登 入</button>
+      <%= link_to '重置密码', new_reset_password_path, { :class => 'button--light default link-to-button' } %>
+    </div>
+  <% end %>
+</div>

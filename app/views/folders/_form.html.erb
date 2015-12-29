@@ -1,7 +1,7 @@
 <%= f.error_messages %>
 <div class="form__row">
     <div class="form__label">
-        <%= f.label :文件名 %>
+        <%= f.label :name, t(:'文件夹名') %>
     </div>
     <div class="form__control">
         <%= f.text_field :name, { :class => 'text_input' } %>
@@ -9,6 +9,5 @@
 </div>
 <div class="form-btns clearfix">
     <button type="submit" class="button--light">保 存</button>
-  <%#= f.submit t(:save), { :class => 'button--light' } %>
     <%= link_to '返 回', @folder.parent, { :class => 'button--light default link-to-button' } %>
 </div>

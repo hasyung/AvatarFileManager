@@ -1,16 +1,22 @@
-<% content_for :title, t(:reset_password) -%>
+<div class="form__wrapper--center form__wrapper--normal">
+  <% content_for :title, t(:'重置密码') -%>
 
-<h1><%= content_for :title %></h1>
-<p>
-  <%= render 'message' %>
-</p>
-<%= form_tag(reset_password_index_path) do %>
+  <h1 class="title--level1"><%= content_for :title %></h1>
   <p>
-    <%= label_tag :email, t(:email) %>:<br>
-    <%= text_field_tag :email, nil, :class => 'text_input' %>
+    <%= render 'message' %>
   </p>
-  <p>
-    <%= submit_tag t(:send_email) %> &nbsp; &mdash; &nbsp;
-    <%= link_to t(:back), new_session_path %>
-  </p>
-<% end %>
+  <%= form_tag(reset_password_index_path) do %>
+    <div class="form__row">
+      <div class="form__label">
+        <%= label_tag :email, t(:'电子邮箱') %>
+      </div>
+      <div class="form__control">
+        <%= text_field_tag :email, nil, :class => 'text_input' %>
+      </div>
+    </div>
+    <div class="form-btns clearfix">
+      <button type="submit" class="button--light">发 送</button>
+      <%= link_to '返 回', new_session_path, { :class => 'button--light default link-to-button' } %>
+    </div>
+  <% end %>
+</div>
