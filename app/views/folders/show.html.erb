@@ -16,7 +16,7 @@
   <span class="folder_menu bdr"><%= image_tag('file_add.png', :alt => t(:upload_a_file)) %> <%= link_to t(:上传文件), new_folder_file_path(@folder) %></span>
 <% end -%>
 <% if current_user.member_of_admins? -%>
-  <span class="folder_menu bdr" id="permissions_link"><span><%= image_tag('permissions.png', :alt => t(:permissions)) %> <%= link_to t(:'权限'), '#', :class => 'permissions_link' %></span></span>
+  <span class="folder_menu" id="permissions_link"><span><%= image_tag('permissions.png', :alt => t(:permissions)) %> <%= link_to t(:授权), '#', :class => 'permissions_link' %></span></span>
 <% end -%>
   <span class="folder_menu" id="clipboard_link"><span><%= image_tag('clipboard.png', :alt => t(:clipboard)) %> <%= link_to t(:剪贴板), '#', :class => 'clipboard_link' %></span></span>
 </p>

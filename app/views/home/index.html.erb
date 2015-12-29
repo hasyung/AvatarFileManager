@@ -6,7 +6,7 @@
                 <div class="menu__light--root"></div>
             </div>
             <div class="menu__name--root">
-                产品
+                川航人力资源
             </div>
         </div>
         <div class="row__sep--root"></div>
@@ -17,7 +17,7 @@
                 <div class="menu__light--root"></div>
             </div>
             <div class="menu__name--root">
-                仓库
+                代码仓库
             </div>
         </div>
         <div class="row__sep--root"></div>
@@ -33,6 +33,22 @@
         </div>
         <div class="row__sep--root"></div>
 
+        <div class="menu__item--root">
+            <div class="menu__icon--root">
+                <%= link_to image_tag('root_icon_3.png', :alt => 'Dinners'), "https://docs.google.com/spreadsheets/d/1SEnuCZF-QvlfJkNcd4i8nGu7THdCp_Ovav-vvq6YBQk/edit?usp=sharing" %>
+                <div class="menu__light--root"></div>
+            </div>
+            <div class="menu__name--root">
+                餐补
+            </div>
+        </div>
+
+        <% if signed_in? -%>
+
+        <% end -%>
+    </div>
+
+    <div class="menu__row--root">
         <% if signed_in? -%>
             <div class="menu__item--root">
                 <div class="menu__icon--root">
@@ -40,56 +56,43 @@
                     <div class="menu__light--root"></div>
                 </div>
                 <div class="menu__name--root">
-                    文档
+                    文件
+                </div>
+            </div>
+            <div class="row__sep--root"></div>
+
+            <div class="menu__item--root">
+                <div class="menu__icon--root">
+                    <%= link_to image_tag('root_icon_6.png', :alt => 'Dinners'), "http://code.cdavatar.com:8083/folders/136" %>
+                    <div class="menu__light--root"></div>
+                </div>
+                <div class="menu__name--root">
+                    工作总结
+                </div>
+            </div>
+            <div class="row__sep--root"></div>
+
+            <div class="menu__item--root">
+                <div class="menu__icon--root">
+                    <%= link_to image_tag('root_icon_1.png', :alt => 'waiting'), "http://code.cdavatar.com:8083/folders/3" %>
+                    <div class="menu__light--root"></div>
+                </div>
+                <div class="menu__name--root">
+                    分享会议存档
+                </div>
+            </div>
+            <div class="row__sep--root"></div>
+
+            <div class="menu__item--root">
+                <div class="menu__icon--root">
+                    <%= link_to image_tag('root_icon_1.png', :alt => 'waiting'), "http://code.cdavatar.com:8083/folders/21" %>
+                    <div class="menu__light--root"></div>
+                </div>
+                <div class="menu__name--root">
+                    电子书
                 </div>
             </div>
         <% end -%>
-    </div>
-
-    <div class="menu__row--root">
-        <div class="menu__item--root">
-            <div class="menu__icon--root">
-                <%= link_to image_tag('root_icon_3.png', :alt => 'Dinners'), "" %>
-                <div class="menu__light--root"></div>
-            </div>
-            <div class="menu__name--root">
-                餐补
-            </div>
-        </div>
-        <div class="row__sep--root"></div>
-
-        <div class="menu__item--root">
-            <div class="menu__icon--root">
-                <%= link_to image_tag('root_icon_6.png', :alt => 'Dinners'), "" %>
-                <div class="menu__light--root"></div>
-            </div>
-            <div class="menu__name--root">
-                工作总结
-            </div>
-        </div>
-        <div class="row__sep--root"></div>
-
-        <div class="menu__item--root hidden">
-            <div class="menu__icon--root">
-                <%= link_to image_tag('root_icon_1.png', :alt => 'waiting'), "" %>
-                <div class="menu__light--root"></div>
-            </div>
-            <div class="menu__name--root">
-                待定
-            </div>
-        </div>
-        <div class="row__sep--root"></div>
-
-        <div class="menu__item--root hidden">
-            <div class="menu__icon--root">
-                <%= link_to image_tag('root_icon_1.png', :alt => 'waiting'), "" %>
-                <div class="menu__light--root"></div>
-            </div>
-            <div class="menu__name--root">
-                待定
-            </div>
-        </div>
-
 
     </div>
 

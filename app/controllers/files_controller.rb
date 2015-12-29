@@ -15,7 +15,7 @@ class FilesController < ApplicationController
   end
 
   def preview
-    Pathname.new(Rails.root.to_s + "/public/common/").children.each { |p| p.unlink }
+    # Pathname.new(Rails.root.to_s + "/public/common/").children.each { |p| p.unlink }
 
     @filename = Digest::MD5.hexdigest(Time.new.to_s) + "_" + @file.attachment_file_name
 
