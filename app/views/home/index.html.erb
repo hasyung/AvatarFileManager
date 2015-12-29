@@ -1,5 +1,17 @@
 <div class="menu--root">
     <div class="menu__row--root">
+        <% if signed_in? -%>
+            <div class="menu__item--root">
+                <div class="menu__icon--root">
+                    <%= link_to image_tag('root_icon_4.png', :alt => 'folders'), folders_path %>
+                    <div class="menu__light--root"></div>
+                </div>
+                <div class="menu__name--root">
+                    文档
+                </div>
+            </div>
+        <% end -%>
+
         <div class="menu__item--root">
             <div class="menu__icon--root">
                 <%= link_to image_tag('root_icon_1.png', :alt => 'Products'), "http://code.cdavatar.com:8081/" %>
@@ -32,18 +44,6 @@
             </div>
         </div>
         <div class="row__sep--root"></div>
-
-        <% if signed_in? -%>
-            <div class="menu__item--root">
-                <div class="menu__icon--root">
-                    <%= link_to image_tag('root_icon_4.png', :alt => 'folders'), folders_path %>
-                    <div class="menu__light--root"></div>
-                </div>
-                <div class="menu__name--root">
-                    文档
-                </div>
-            </div>
-        <% end -%>
     </div>
 
     <div class="menu__row--root">
