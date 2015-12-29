@@ -1,6 +1,6 @@
-<% content_for :title, t(:new_folder) -%>
+<% content_for :title, t(:新建文件夹) -%>
 
-<h1><%= content_for :title %></h1>
+<h1 class="title--level1"><%= content_for :title %></h1>
 <%= form_for [@target_folder, @folder] do |f| %>
   <%= render :partial => 'form', :locals => { :f => f } %>
 <% end %>

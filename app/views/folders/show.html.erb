@@ -1,30 +1,35 @@
 <% content_for :title, @folder.name -%>
 
-<h1><%= content_for :title %></h1>
+<h1 class="title--level1"><%= content_for :title %></h1>
+<!-- 面包屑 导航 -->
 <% unless @folder.is_root? -%>
 <p>
   <%= breadcrumbs(@folder) %>
   <span class="breadcrumb nowrap"><%= @folder.name %></span>
 </p>
 <% end -%>
-<p>
+<!-- 面包屑 导航 end -->
+<!-- folders 顶级工具栏 -->
+<p class="folder_menu_wrapper">
 <% if current_user.can_create(@folder) -%>
-  <span class="folder_menu"><%= image_tag('folder_add.png', :alt => t(:create_a_new_folder)) %> <%= link_to t(:create_a_new_folder), new_folder_folder_path(@folder) %></span>
-  <span class="folder_menu"><%= image_tag('file_add.png', :alt => t(:upload_a_file)) %> <%= link_to t(:upload_a_file), new_folder_file_path(@folder) %></span>
+  <span class="folder_menu"><%= image_tag('folder_add.png', :alt => t(:create_a_new_folder)) %> <%= link_to t(:新建文件夹), new_folder_folder_path(@folder) %></span>
+  <span class="folder_menu"><%= image_tag('file_add.png', :alt => t(:upload_a_file)) %> <%= link_to t(:上传文件), new_folder_file_path(@folder) %></span>
 <% end -%>
 <% if current_user.member_of_admins? -%>
-  <span class="folder_menu" id="permissions_link"><span><%= image_tag('permissions.png', :alt => t(:permissions)) %> <%= link_to t(:permissions), '#', :class => 'permissions_link' %></span></span>
+  <span class="folder_menu" id="permissions_link"><span><%= image_tag('permissions.png', :alt => t(:permissions)) %> <%= link_to t(:许可证), '#', :class => 'permissions_link' %></span></span>
 <% end -%>
-  <span class="folder_menu" id="clipboard_link"><span><%= image_tag('clipboard.png', :alt => t(:clipboard)) %> <%= link_to t(:clipboard), '#', :class => 'clipboard_link' %></span></span>
+  <span class="folder_menu" id="clipboard_link"><span><%= image_tag('clipboard.png', :alt => t(:clipboard)) %> <%= link_to t(:剪贴板), '#', :class => 'clipboard_link' %></span></span>
 </p>
-<div id="files_and_folders">
-  <table style="width:100%;border: 1px solid #eee;">
+<!-- folders 顶级工具栏 end -->
+
+<div id="files_and_folders" class="table--stripes">
+  <table style="width:100%;">
     <tr>
       <th></th>
-      <th><%= t :name %></th>
-      <th><%= t :size %></th>
-      <th><%= t :date_modified %></th>
-      <th></th>
+      <th><%= t :名称 %></th>
+      <th><%= t :大小 %></th>
+      <th><%= t :修改日期 %></th>
+      <th><%= t :操作 %></th>
     </tr>
   <% unless @folder.is_root? -%>
     <tr class="<%= cycle('even','odd') %>">
