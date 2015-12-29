@@ -3,7 +3,7 @@
   <% unless @user.new_record? -%>
   <div class="form__row">
     <div class="form__label">
-      <%= f.label :name %>
+      <%= f.label :name, t(:'用户名') %>
     </div>
     <div class="form__control">
       <%= f.text_field :name, { :class => 'text_input' } %>
@@ -12,7 +12,7 @@
   <% end -%>
   <div class="form__row">
     <div class="form__label">
-      <%= f.label :email %>
+      <%= f.label :email, t(:'电子邮箱') %>
     </div>
     <div class="form__control">
       <%= f.text_field :email, { :class => 'text_input' } %>
@@ -21,7 +21,7 @@
   <% unless @user.new_record? -%>
   <div class="form__row">
     <div class="form__label">
-      <%= f.label :password %>
+      <%= f.label :password, t(:'新密码') %>
     </div>
     <div class="form__control">
       <%= f.password_field :password, { :class => 'text_input' } %>
@@ -30,7 +30,7 @@
 
   <div class="form__row">
     <div class="form__label">
-      <%= f.label :confirm_password %>
+      <%= f.label :confirm_password, t(:'确认密码') %>
     </div>
     <div class="form__control">
       <%= f.password_field :password_confirmation, { :class => 'text_input' } %>
@@ -39,7 +39,7 @@
   <% end -%>
   <% if signed_in? && current_user.member_of_admins? -%>
   <p class="title--level1">
-    <%= t :member_of_these_groups %>:
+    <%= t :'已加入的群组' %>:
     <span class="user_groups">
     <% if @user.is_admin -%>
       <span class="disabled">

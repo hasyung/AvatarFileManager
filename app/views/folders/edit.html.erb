@@ -1,6 +1,8 @@
-<% content_for :title, t(:rename_folder) -%>
+<div class="form__wrapper--center form__wrapper--normal">
+    <% content_for :title, '更改文件夹名' -%>
 
-<h1><%= content_for :title %></h1>
-<%= form_for @folder do |f| %>
-  <%= render :partial => 'form', :locals => { :f => f } %>
-<% end %>
+    <h1 class="title--level1"><%= content_for :title %></h1>
+    <%= form_for @folder do |f| %>
+      <%= render :partial => 'form', :locals => { :f => f } %>
+    <% end %>
+</div>

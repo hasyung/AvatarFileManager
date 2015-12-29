@@ -1,4 +1,6 @@
-<% content_for :title, t(:new_group) -%>
+<div class="form__wrapper--center form__wrapper--normal">
+    <% content_for :title, '新建组' -%>
 
-<h1 class="title--level1"><%= content_for :title %></h1>
-<%= render 'form' %>
+    <h1 class="title--level1"><%= content_for :title %></h1>
+    <%= render 'form' %>
+</div>
