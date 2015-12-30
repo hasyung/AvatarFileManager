@@ -3,7 +3,7 @@
 <h1 class="title--level1"><%= content_for :title %></h1>
 <!-- 面包屑 导航 -->
 <% unless @folder.is_root? -%>
-<p>
+<p class="clearfix">
   <%= breadcrumbs(@folder) %>
   <span class="breadcrumb nowrap"><%= @folder.name %></span>
 </p>
@@ -12,8 +12,8 @@
 <!-- folders 顶级工具栏 -->
 <p class="folder_menu_wrapper">
 <% if current_user.can_create(@folder) -%>
-  <span class="folder_menu"><%= image_tag('folder_add.png', :alt => t(:create_a_new_folder)) %> <%= link_to t(:新建文件夹), new_folder_folder_path(@folder) %></span>
-  <span class="folder_menu"><%= image_tag('file_add.png', :alt => t(:upload_a_file)) %> <%= link_to t(:上传文件), new_folder_file_path(@folder) %></span>
+  <span class="folder_menu bdr"><%= image_tag('folder_add.png', :alt => t(:create_a_new_folder)) %> <%= link_to t(:新建文件夹), new_folder_folder_path(@folder) %></span>
+  <span class="folder_menu bdr"><%= image_tag('file_add.png', :alt => t(:upload_a_file)) %> <%= link_to t(:上传文件), new_folder_file_path(@folder) %></span>
 <% end -%>
 <% if current_user.member_of_admins? -%>
   <span class="folder_menu" id="permissions_link"><span><%= image_tag('permissions.png', :alt => t(:permissions)) %> <%= link_to t(:授权), '#', :class => 'permissions_link' %></span></span>

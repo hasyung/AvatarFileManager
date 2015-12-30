@@ -1,12 +1,12 @@
 <div class="form__wrapper--center form__wrapper--large">
-  <% content_for :title, t(:share_file) -%>
+  <% content_for :title, t(:'分享文件') -%>
 
   <h1 class="title--level1"><%= content_for :title %></h1>
   <%= form_for [@file, @share_link], :url => { :action => 'create' } do |f| %>
     <%= f.error_messages :header_message => t(:share_link_could_not_be_sent) %>
     <div class="form__row">
       <div class="form__label">
-        <%= t :you_are_about_to_share_the_following_file %>
+        <%= t :'您希望分享的文件' %>
       </div>
       <span class="shared_file">
         <%= image_tag(file_icon(@file.extension)) %>
