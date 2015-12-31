@@ -466,6 +466,10 @@ span.field_with_errors input, span.field_with_errors textarea { background-color
     border-right: 1px solid #ddd;
     padding: 0 14px;
 
+    img {
+        vertical-align: middle;
+    }
+
     &:last-child {
         border-right: 0;
     }
