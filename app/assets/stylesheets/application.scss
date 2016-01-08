@@ -314,7 +314,7 @@ td img { padding: 0; }
 
 //主页 homePage
 .menu--root {
-    padding: 30px 160px;
+    padding: 80px 160px;
 }
 
 .menu__row--root {
@@ -324,7 +324,7 @@ td img { padding: 0; }
 }
 
 .menu__item--root {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     overflow: hidden;
 }
 
@@ -465,6 +465,10 @@ span.field_with_errors input, span.field_with_errors textarea { background-color
 .folder_menu, .user_menu, .group_menu {
     border-right: 1px solid #ddd;
     padding: 0 14px;
+
+    img {
+        vertical-align: middle;
+    }
 
     &:last-child {
         border-right: 0;
